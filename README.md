@@ -1,2 +1,2 @@
-# arvin
+# Resume edge
 AI Resume Ranking System using NLP and ranking algorithms
