@@ -7,6 +7,8 @@ from ranking import rank_resumes
 
 st.set_page_config(page_title="AI Resume Ranking System", layout="wide")
 st.title("AI Resume Ranking System")
+st.markdown(ad_html, unsafe_allow_html=True)
+
 
 # 🌈 Custom CSS for curved graph boxes
 st.markdown("""
