@@ -95,4 +95,5 @@ websockets==16.0
 wrapt==2.2.1
 resume-parser 
 PyMuPDF
-sentence-transformers
+sentence-transformers==2.2.2
+
