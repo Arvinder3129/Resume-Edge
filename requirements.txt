@@ -1,8 +1,7 @@
-streamlit
-resume-parser
-PyMuPDF
-spacy
-sentence-transformers
-scikit-learn
-pandas
-numpy
+streamlit==1.33.0
+pandas==2.2.2
+numpy==1.26.4
+sentence-transformers==2.2.2
+PyMuPDF==1.24.0
+altair==5.2.0
+scikit-learn==1.5.0
