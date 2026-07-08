@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume Edge | Ranking Workspace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg app-nav border-bottom sticky-top">
+      <div class="container-fluid px-3 px-lg-4">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="/">
+          <span class="brand-mark"><i class="bi bi-stars"></i></span>
+          Resume Edge
+        </a>
+        <div class="ms-auto d-flex align-items-center gap-3 small">
+          <a class="nav-link fw-semibold" href="/">Home</a>
+          <span class="d-none d-sm-inline-flex align-items-center gap-2 text-secondary"><span class="status-dot"></span>AI Ranking</span>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-fluid px-3 px-lg-4 py-4 app-shell">
+      <div class="workspace-grid">
+        <section class="input-pane">
+          <div class="pane-header accent-panel">
+            <div>
+              <p class="eyebrow mb-1">Workspace</p>
+              <h1 class="h4 fw-bold mb-2">Rank Resumes</h1>
+              <p class="text-secondary mb-0">Upload PDF or DOCX files and compare them with the role description.</p>
+            </div>
+          </div>
+
+          <form id="rankingForm" class="tool-panel upload-panel">
+            <div class="mb-3">
+              <label for="jobDescription" class="form-label fw-semibold">Job description</label>
+              <textarea id="jobDescription" name="job_description" class="form-control" rows="11" placeholder="Paste the role description, responsibilities, and must-have skills" required></textarea>
+            </div>
+
+            <label for="resumeFiles" class="drop-zone mb-3">
+              <input id="resumeFiles" name="resumes" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple required>
+              <span class="drop-icon"><i class="bi bi-cloud-arrow-up"></i></span>
+              <strong>Upload resumes</strong>
+              <small id="fileSummary">PDF or DOCX, multiple files supported</small>
+            </label>
+
+            <div class="d-grid gap-2">
+              <button id="rankButton" class="btn btn-primary" type="submit">
+                <i class="bi bi-sort-down-alt me-2"></i><span>Rank Resumes</span>
+              </button>
+              <button id="resetButton" class="btn btn-outline-secondary" type="button">
+                <i class="bi bi-arrow-counterclockwise me-2"></i><span>Reset</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <section class="results-pane">
+          <div class="metrics-row">
+            <div class="metric-box">
+              <span class="metric-label">Candidates</span>
+              <strong id="candidateCount">0</strong>
+            </div>
+            <div class="metric-box">
+              <span class="metric-label">Top Score</span>
+              <strong id="topScore">0.00</strong>
+            </div>
+            <div class="metric-box">
+              <span class="metric-label">Strong</span>
+              <strong id="strongCount">0</strong>
+            </div>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <i class="bi bi-file-earmark-richtext"></i>
+            <h2 class="h5 fw-bold mb-1">Ready for resumes</h2>
+            <p class="text-secondary mb-0">Upload PDF or DOCX resumes to see ranking charts and exportable results.</p>
+          </div>
+
+          <div id="resultsArea" class="d-none">
+            <div class="best-match mb-3">
+              <div>
+                <span class="badge text-bg-success mb-2">Best match</span>
+                <h2 id="bestName" class="h5 fw-bold mb-1"></h2>
+                <p id="bestScore" class="mb-0 text-secondary"></p>
+              </div>
+              <button id="downloadButton" class="btn btn-outline-primary btn-sm" type="button">
+                <i class="bi bi-download me-1"></i><span>CSV</span>
+              </button>
+            </div>
+
+            <div id="skippedNotice" class="alert alert-warning d-none" role="alert"></div>
+
+            <div class="chart-grid mb-3">
+              <div class="tool-panel chart-panel">
+                <div class="panel-title">Match Scores</div>
+                <canvas id="scoreChart"></canvas>
+              </div>
+              <div class="tool-panel chart-panel">
+                <div class="panel-title">Categories</div>
+                <canvas id="categoryChart"></canvas>
+              </div>
+            </div>
+
+            <div class="tool-panel table-panel">
+              <div class="panel-title mb-2">Ranked Resumes</div>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th>Rank</th>
+                      <th>Name</th>
+                      <th>Match score</th>
+                      <th>Category</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resultsTable"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="toast" class="toast-message d-none" role="status"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
