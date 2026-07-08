@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿# Resume Edge
 
 Resume Edge is a modern Flask web application that ranks PDF and DOCX resumes against a job description using sentence-transformer embeddings and cosine similarity.
@@ -62,3 +63,6 @@ Returns ranked results, the best candidate, category counts, and skipped files.
 ### `POST /api/download`
 
 Accepts JSON ranking results and returns `ranked_resumes.csv`.
+=======
+Resume Edge is a modern Flask web application that ranks PDF and DOCX resumes against a job description using sentence-transformer embeddings and cosine similarity.
+>>>>>>> 39447d635292448fc0c23aad0da30af30cf8c970
