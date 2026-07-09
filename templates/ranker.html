@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -23,7 +23,13 @@
     </nav>
 
     <main class="container-fluid px-3 px-lg-4 py-4 app-shell">
-      <div class="workspace-grid">
+      <div class="ad-slot front-ad ranker-front-ad" aria-label="Advertisement">
+        <span>Advertisement</span>
+        <strong>Front Banner Ad</strong>
+        <small>728 x 90 / responsive banner</small>
+      </div>
+      <div class="ranker-layout">
+        <div class="workspace-grid">
         <section class="input-pane">
           <div class="pane-header accent-panel">
             <div>
@@ -122,6 +128,15 @@
             </div>
           </div>
         </section>
+        </div>
+
+        <aside class="ad-sidebar" aria-label="Advertisement">
+          <div class="ad-slot side-ad sticky-ad">
+            <span>Advertisement</span>
+            <strong>Side Banner</strong>
+            <small>300 x 600</small>
+          </div>
+        </aside>
       </div>
     </main>
 
@@ -132,3 +147,4 @@
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </body>
 </html>
+
