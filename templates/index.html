@@ -40,15 +40,17 @@
   </div>
 </section>
 
-<!-- Hide empty ad gap -->
 <script>
   setTimeout(function() {
     var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
-    if (ad && ad.offsetHeight === 0) {
+    if (ad && ad.offsetHeight > 0) {
+      ad.closest('.front-ad-wrap').style.display = 'block';
+    } else {
       ad.closest('.front-ad-wrap').style.display = 'none';
     }
   }, 2000);
 </script>
+
 
       <section class="home-hero">
         <div class="container px-3 px-lg-0">
