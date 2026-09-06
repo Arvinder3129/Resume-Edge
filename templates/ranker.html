@@ -40,12 +40,14 @@
 <!-- Hide empty ad gap -->
 <script>
   setTimeout(function() {
-    var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
-    if (ad && ad.offsetHeight > 0) {
-      ad.closest('.front-ad-wrap').style.display = 'block';
-    } else {
-      ad.closest('.front-ad-wrap').style.display = 'none';
-    }
+    document.querySelectorAll('.ad-slot').forEach(function(slot) {
+      var ad = slot.querySelector('ins.adsbygoogle');
+      if (ad && ad.offsetHeight > 0) {
+        slot.style.display = 'block';
+      } else {
+        slot.style.display = 'none';
+      }
+    });
   }, 2000);
 </script>
 
@@ -168,14 +170,17 @@
 <!-- Hide empty ad gap -->
 <script>
   setTimeout(function() {
-    var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
-    if (ad && ad.offsetHeight > 0) {
-      ad.closest('.front-ad-wrap').style.display = 'block';
-    } else {
-      ad.closest('.front-ad-wrap').style.display = 'none';
-    }
+    document.querySelectorAll('.ad-slot').forEach(function(slot) {
+      var ad = slot.querySelector('ins.adsbygoogle');
+      if (ad && ad.offsetHeight > 0) {
+        slot.style.display = 'block';
+      } else {
+        slot.style.display = 'none';
+      }
+    });
   }, 2000);
 </script>
+
 
       </div>
     </main>
