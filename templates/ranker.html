@@ -41,11 +41,14 @@
 <script>
   setTimeout(function() {
     var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
-    if (ad && ad.offsetHeight === 0) {
+    if (ad && ad.offsetHeight > 0) {
+      ad.closest('.front-ad-wrap').style.display = 'block';
+    } else {
       ad.closest('.front-ad-wrap').style.display = 'none';
     }
   }, 2000);
 </script>
+
       <div class="ranker-layout">
         <div class="workspace-grid">
         <section class="input-pane">
@@ -166,11 +169,14 @@
 <script>
   setTimeout(function() {
     var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
-    if (ad && ad.offsetHeight === 0) {
+    if (ad && ad.offsetHeight > 0) {
+      ad.closest('.front-ad-wrap').style.display = 'block';
+    } else {
       ad.closest('.front-ad-wrap').style.display = 'none';
     }
   }, 2000);
 </script>
+
       </div>
     </main>
 
