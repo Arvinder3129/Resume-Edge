@@ -35,6 +35,13 @@ body {
   margin-bottom: 0;
 }
 
+.ad-slot {
+  display: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
 .app-nav {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(14px);
