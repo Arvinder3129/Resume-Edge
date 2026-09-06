@@ -36,7 +36,16 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-      </div>
+      </div>   
+<!-- Hide empty ad gap -->
+<script>
+  setTimeout(function() {
+    var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
+    if (ad && ad.offsetHeight === 0) {
+      ad.closest('.front-ad-wrap').style.display = 'none';
+    }
+  }, 2000);
+</script>
       <div class="ranker-layout">
         <div class="workspace-grid">
         <section class="input-pane">
@@ -152,7 +161,16 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
           </div>
-        </aside>
+        </aside>  
+<!-- Hide empty ad gap -->
+<script>
+  setTimeout(function() {
+    var ad = document.querySelector('.front-ad-wrap ins.adsbygoogle');
+    if (ad && ad.offsetHeight === 0) {
+      ad.closest('.front-ad-wrap').style.display = 'none';
+    }
+  }, 2000);
+</script>
       </div>
     </main>
 
