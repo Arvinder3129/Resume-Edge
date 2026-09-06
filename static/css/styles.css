@@ -30,6 +30,7 @@ body {
 }
 
 .front-ad-wrap {
+  display: none;
   min-height: 0;
   margin-bottom: 0;
 }
